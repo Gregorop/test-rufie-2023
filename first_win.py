@@ -1,5 +1,6 @@
 #тут будут 3 класса, для каждого окна
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import Qt
 
 from instr import *
 
@@ -18,9 +19,9 @@ class FirstWin(QWidget):
         hello = QLabel(txt_hello)
         instruction = QLabel(txt_instruction)
         start_btn = QPushButton(txt_next)
-        start_btn.setStyleSheet('''width:300px;height:200px;background:pink''')
+        start_btn.setStyleSheet('''width:3px;height:200px;background:pink''')
         line = QVBoxLayout()
-        line.addWidget(hello)
+        line.addWidget(hello, alignment=Qt.AlignCenter)
         line.addWidget(instruction)
         line.addWidget(start_btn)
         self.setLayout(line)
