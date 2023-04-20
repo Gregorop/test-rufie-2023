@@ -19,9 +19,11 @@ class FirstWin(QWidget):
         hello = QLabel(txt_hello)
         instruction = QLabel(txt_instruction)
         start_btn = QPushButton(txt_next)
-        start_btn.setStyleSheet('''width:3px;height:200px;background:pink''')
+        
+        start_btn.setStyleSheet('''width:200px;height:200px;background:pink''')
+        #start_btn.setFixedWidth(35) 
         line = QVBoxLayout()
         line.addWidget(hello, alignment=Qt.AlignCenter)
         line.addWidget(instruction)
-        line.addWidget(start_btn)
+        line.addWidget(start_btn, alignment=Qt.AlignCenter)
         self.setLayout(line)
