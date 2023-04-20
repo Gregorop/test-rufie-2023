@@ -10,6 +10,7 @@ class FirstWin(QWidget):
         self.set_ui()
 
     def set_appear(self):
+        self.setStyleSheet('font-size:38px; background:lightgreen')
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
 
@@ -17,7 +18,7 @@ class FirstWin(QWidget):
         hello = QLabel(txt_hello)
         instruction = QLabel(txt_instruction)
         start_btn = QPushButton(txt_next)
-        start_btn.setStyleSheet('''width:500px;height:500px''')
+        start_btn.setStyleSheet('''width:300px;height:200px;background:pink''')
         line = QVBoxLayout()
         line.addWidget(hello)
         line.addWidget(instruction)
