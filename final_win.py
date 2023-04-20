@@ -1,6 +1,8 @@
+#тут будут 3 класса, для каждого окна
 from PyQt5.QtWidgets import *
-
 from settings import *
+
+
 class FinalWin(QWidget):
     def __init__(self):
         super().__init__()
