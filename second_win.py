@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import Qt
 
 from settings import *
 class SecondWin(QWidget):
@@ -34,21 +35,21 @@ class SecondWin(QWidget):
 
 
         line = QVBoxLayout()
-        line.addWidget(timer_label)
+        line.addWidget(timer_label, alignment= Qt.AlignRight)
         line.addWidget(fio_label)
-        line.addWidget(fio_input)
+        line.addWidget(fio_input, alignment= Qt.AlignLeft)
         line.addWidget(age_label)
-        line.addWidget(age_input)
+        line.addWidget(age_input, alignment= Qt.AlignLeft)
         line.addWidget(instr1)
-        line.addWidget(start_btn1)
-        line.addWidget(pulse1_input)
+        line.addWidget(start_btn1, alignment= Qt.AlignLeft)
+        line.addWidget(pulse1_input, alignment= Qt.AlignLeft)
         line.addWidget(instr2)
-        line.addWidget(test)
+        line.addWidget(test, alignment= Qt.AlignLeft)
         line.addWidget(instr3)
-        line.addWidget(test2)
-        line.addWidget(final_input1)
-        line.addWidget(final_input2)
-        line.addWidget(results)
+        line.addWidget(test2, alignment= Qt.AlignLeft)
+        line.addWidget(final_input1, alignment= Qt.AlignLeft)
+        line.addWidget(final_input2, alignment= Qt.AlignLeft)
+        line.addWidget(results, alignment= Qt.AlignCenter)
         
 
 
