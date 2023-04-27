@@ -27,6 +27,37 @@ class SecondWin(QWidget):
         self.timer.start(1000) #1000 милисекунд = раз в 1 нормальную секунду
         self.timer.timeout.connect(self.test_1)       #запускается метод test
 
+    def test_2(self): #обновить таймер с приседаниями
+        self.time = self.time.addSecs(-1)
+        self.timer_label.setText('осталось присесть ' + self.time.toString('ss') + " раз")
+        if self.time.second() == 0:
+            self.timer.stop()
+            self.timer_label.setText('хватит приседать')
+
+    def start_timer_2(self): #запускаем таймер на приседания
+        self.timer = QTimer()
+        self.time = QTime(0,0,45)
+        self.timer.start(1500) #1500 милисекунд = каждую 1.5 нормальную секунду
+        self.timer.timeout.connect(self.test_2)       #запускается метод test
+
+    def test_3(self): #будет запускаться раз в секунду
+        self.time = self.time.addSecs(-1)
+        self.timer_label.setText(self.time.toString('mm:ss'))
+
+        if self.time.second() >= 45: self.timer_label.setStyleSheet('color:green')
+        elif self.time.second() >= 15: self.timer_label.setStyleSheet('color:black')
+        else: self.timer_label.setStyleSheet('color:green')
+
+        if self.time.second() == 0:
+            self.timer.stop()
+            self.timer_label.setText('тест закончен, переходите к результатам')
+
+    def start_timer_3(self): #запускаем таймер 3
+        self.timer = QTimer()
+        self.time = QTime(0,1,0)
+        self.timer.start(1000) #1000 милисекунд = раз в 1 нормальную секунду
+        self.timer.timeout.connect(self.test_3) 
+
     def set_ui(self):
         self.timer_label = QLabel('00:00:15')
 
@@ -43,9 +74,11 @@ class SecondWin(QWidget):
         puls1_input = QLineEdit()
         instr2 = QLabel(txt_test2)
         start2_btn = QPushButton(txt_starttest2)
+        start2_btn.clicked.connect(self.start_timer_2)
 
         instr3 = QLabel(txt_test3)
         start3_btn = QPushButton(txt_starttest3)
+        start3_btn.clicked.connect(self.start_timer_3)
 
         puls2_input = QLineEdit()
         puls3_input = QLineEdit()
