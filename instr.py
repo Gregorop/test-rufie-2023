@@ -16,7 +16,7 @@ txt_sendresults = 'отправить результаты'
 txt_hinttest1 = '0'
 txt_hinttest2 = '0'
 txt_hinttest3 = '0'
-txt_starttest1 = 'Начать первый тест'
+txt_starttest1 = 'измерить пульс до приседаний'
 txt_starttest2 = 'Начать делать приседания'
 txt_starttest3 = 'Начать финальный тест'
 
