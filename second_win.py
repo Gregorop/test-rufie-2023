@@ -2,6 +2,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTime, QTimer
 
+from final_win import *
+
 from instr import *
 
 class SecondWin(QWidget):
@@ -58,6 +60,11 @@ class SecondWin(QWidget):
         self.timer.start(1000) #1000 милисекунд = раз в 1 нормальную секунду
         self.timer.timeout.connect(self.test_3) 
 
+    def show_final_win(self):
+        self.win = FinalWin()
+        self.win.show()
+        self.hide()
+
     def set_ui(self):
         self.timer_label = QLabel('00:00:15')
 
@@ -84,6 +91,7 @@ class SecondWin(QWidget):
         puls3_input = QLineEdit()
 
         final_btn = QPushButton(txt_sendresults)
+        final_btn.clicked.connect(self.show_final_win)
 
         line = QVBoxLayout()
         line.addWidget(self.timer_label)

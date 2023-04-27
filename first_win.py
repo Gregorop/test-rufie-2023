@@ -2,6 +2,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 
+from second_win import *
+
 from instr import *
 
 class FirstWin(QWidget):
@@ -15,6 +17,11 @@ class FirstWin(QWidget):
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
 
+    def show_second_win(self):
+        self.win = SecondWin()
+        self.win.show()
+        self.hide()
+
     def set_ui(self):
         hello = QLabel(txt_hello)
         instruction = QLabel(txt_instruction)
@@ -22,6 +29,8 @@ class FirstWin(QWidget):
         
         start_btn.setStyleSheet('''width:200px;height:200px;background:pink''')
         #start_btn.setFixedWidth(35) 
+        start_btn.clicked.connect(self.show_second_win)
+        
         line = QVBoxLayout()
         line.addWidget(hello, alignment=Qt.AlignCenter)
         line.addWidget(instruction)
