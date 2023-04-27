@@ -15,6 +15,7 @@ class SecondWin(QWidget):
 
     def set_ui(self):
         timer_label = QLabel('00:00:15')
+        timer_label.setStyleSheet("font-size: 35px")
         fio_label = QLabel(txt_name)
         fio_input = QLineEdit()
         age_label = QLabel(txt_hintage)
@@ -33,9 +34,9 @@ class SecondWin(QWidget):
 
 
 
-
+        line2 = QHBoxLayout()
         line = QVBoxLayout()
-        line.addWidget(timer_label, alignment= Qt.AlignRight)
+        
         line.addWidget(fio_label)
         line.addWidget(fio_input, alignment= Qt.AlignLeft)
         line.addWidget(age_label)
@@ -50,9 +51,10 @@ class SecondWin(QWidget):
         line.addWidget(final_input1, alignment= Qt.AlignLeft)
         line.addWidget(final_input2, alignment= Qt.AlignLeft)
         line.addWidget(results, alignment= Qt.AlignCenter)
-        
+        line2.addLayout(line)
+        line2.addWidget(timer_label, alignment= Qt.AlignRight) 
 
 
 
         
-        self.setLayout(line)
+        self.setLayout(line2)
