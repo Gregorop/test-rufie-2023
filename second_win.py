@@ -1,3 +1,4 @@
+from final_win import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QTime, QTimer
 
@@ -59,7 +60,10 @@ class SecondWin(QWidget):
 
 
 
-
+    def final_win(self):
+        self.win = FinalWin()
+        self.win.show()
+        self.hide()
 
     def set_appear(self):
         self.setWindowTitle(title)
@@ -86,6 +90,7 @@ class SecondWin(QWidget):
         final_input1 = QLineEdit()
         final_input2 = QLineEdit()
         results = QPushButton(txt_next_results)
+        results.clicked.connect(self.final_win)
 
 
 

@@ -1,6 +1,7 @@
 #тут будут 3 класса, для каждого окна
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
+from second_win import *
 
 from settings import *
 class FirstWin(QWidget):
@@ -9,6 +10,10 @@ class FirstWin(QWidget):
         self.set_appear()
         self.set_ui()
 
+    def second_win(self):
+        self.win = SecondWin()
+        self.win.show()
+        self.hide()
 
     def set_appear(self):
         self.setWindowTitle(title)
@@ -19,6 +24,7 @@ class FirstWin(QWidget):
         instruction = QLabel(txt_instruction)
         start_btn = QPushButton(txt_next)
         start_btn.setStyleSheet('''width:10px;height:10px''')
+        start_btn.clicked.connect(self.second_win)
         line = QVBoxLayout()
         line.addWidget(hello)
         line.addWidget(instruction)
