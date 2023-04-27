@@ -6,12 +6,12 @@ from final_win import *
 app = QApplication([])
 
 first = FirstWin()
-first.show()
+first.hide()
 
 second = SecondWin()
 second.show()
 
 final = FinalWin()
-final.show()
+final.hide()
 
 app.exec()
