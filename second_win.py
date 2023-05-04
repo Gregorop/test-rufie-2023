@@ -61,7 +61,10 @@ class SecondWin(QWidget):
         self.timer.timeout.connect(self.test_3) 
 
     def show_final_win(self):
-        self.win = FinalWin()
+        self.win = FinalWin(age = int(self.age_input.text()),
+                            p1 = int(self.puls1_input.text()),
+                            p2 = int(self.puls2_input.text()),
+                            p3 = int(self.puls3_input.text()))
         self.win.show()
         self.hide()
 
@@ -71,14 +74,14 @@ class SecondWin(QWidget):
         fio_label = QLabel(txt_name)
         fio_input = QLineEdit()
         age_label = QLabel(txt_hintage)
-        age_input = QLineEdit()
+        self.age_input = QLineEdit()
         instr1 = QLabel(txt_test1)
         start1_btn = QPushButton(txt_starttest1)
 
         #тут функция чтобы запустить отчет таймера
         start1_btn.clicked.connect(self.start_timer_1) 
 
-        puls1_input = QLineEdit()
+        self.puls1_input = QLineEdit()
         instr2 = QLabel(txt_test2)
         start2_btn = QPushButton(txt_starttest2)
         start2_btn.clicked.connect(self.start_timer_2)
@@ -87,8 +90,8 @@ class SecondWin(QWidget):
         start3_btn = QPushButton(txt_starttest3)
         start3_btn.clicked.connect(self.start_timer_3)
 
-        puls2_input = QLineEdit()
-        puls3_input = QLineEdit()
+        self.puls2_input = QLineEdit()
+        self.puls3_input = QLineEdit()
 
         final_btn = QPushButton(txt_sendresults)
         final_btn.clicked.connect(self.show_final_win)
@@ -98,15 +101,15 @@ class SecondWin(QWidget):
         line.addWidget(fio_label)
         line.addWidget(fio_input)
         line.addWidget(age_label)
-        line.addWidget(age_input)
+        line.addWidget(self.age_input)
         line.addWidget(instr1)
         line.addWidget(start1_btn)
-        line.addWidget(puls1_input)
+        line.addWidget(self.puls1_input)
         line.addWidget(instr2)
         line.addWidget(start2_btn)
         line.addWidget(instr3)
         line.addWidget(start3_btn)
-        line.addWidget(puls2_input)
-        line.addWidget(puls3_input)
+        line.addWidget(self.puls2_input)
+        line.addWidget(self.puls3_input)
         line.addWidget(final_btn)
         self.setLayout(line)

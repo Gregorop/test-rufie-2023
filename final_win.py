@@ -3,11 +3,13 @@ from PyQt5.QtWidgets import *
 
 from instr import *
 
+
 class FinalWin(QWidget):
-    def __init__(self):
+    def __init__(self, age, p1,p2,p3):
         super().__init__()
         self.set_appear()
         self.set_ui()
+        print(age, p1,p2,p3)
 
     def set_appear(self):
         self.setWindowTitle(txt_title)
