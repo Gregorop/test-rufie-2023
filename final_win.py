@@ -15,17 +15,22 @@ class FinalWin(QWidget):
     def calc_health(self, age, index):
         if age > 15:
             if index > 15: return 'низкое'
-            elif index > 6: return 'средний'
-            else: return 'высокий'
+            elif index > 6: return 'среднее'
+            else: return 'высокое'
         else:
             if index > 18: return 'низкое'
-            elif index > 9: return 'средний'
-            else: return 'высокий'
+            elif index > 9: return 'среднее'
+            else: return 'высокое'
 
     def calc_index(self, p1,p2,p3):
         return ((p1+p2+p3)*4 - 200)/10
 
     def set_appear(self):
+        self.setStyleSheet('font-size:38px;')
+        if self.health == 'низкое':
+            self.setStyleSheet('font-size:38px; background:pink')
+        if self.health == 'высокое':
+            self.setStyleSheet('font-size:38px; background:lightgreen')    
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
 

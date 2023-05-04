@@ -13,6 +13,7 @@ class SecondWin(QWidget):
         self.set_ui()
 
     def set_appear(self):
+        self.setStyleSheet('font-size:24px; margin:10px')
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
 
