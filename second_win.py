@@ -61,7 +61,10 @@ class SecondWin(QWidget):
 
 
     def final_win(self):
-        self.win = FinalWin()
+        self.win = FinalWin(age = int(self.age_input.text()), 
+        p1 = int(self.pulse1_input.text()), 
+        p2 = int(self.final_input1.text()),
+        p3 = int(self.final_input1.text()))
         self.win.show()
         self.hide()
 
@@ -75,20 +78,20 @@ class SecondWin(QWidget):
         fio_label = QLabel(txt_name)
         fio_input = QLineEdit()
         age_label = QLabel(txt_hintage)
-        age_input = QLineEdit()
+        self.age_input = QLineEdit()
         instr1 = QLabel(txt_instr1)
         start_btn1 = QPushButton(txt_start_btn1)
         start_btn1.clicked.connect(self.start_timer1)
 
-        pulse1_input = QLineEdit()
+        self.pulse1_input = QLineEdit()
         instr2 = QLabel(txt_instr2)
         test = QPushButton(txt_test)
         test.clicked.connect(self.start_timer2)
         instr3 = QLabel(txt_instr3)
         test2 = QPushButton(txt_test2)
         test2.clicked.connect(self.start_timer3)
-        final_input1 = QLineEdit()
-        final_input2 = QLineEdit()
+        self.final_input1 = QLineEdit()
+        self.final_input2 = QLineEdit()
         results = QPushButton(txt_next_results)
         results.clicked.connect(self.final_win)
 
@@ -100,16 +103,16 @@ class SecondWin(QWidget):
         line.addWidget(fio_label)
         line.addWidget(fio_input, alignment= Qt.AlignLeft)
         line.addWidget(age_label)
-        line.addWidget(age_input, alignment= Qt.AlignLeft)
+        line.addWidget(self.age_input, alignment= Qt.AlignLeft)
         line.addWidget(instr1)
         line.addWidget(start_btn1, alignment= Qt.AlignLeft)
-        line.addWidget(pulse1_input, alignment= Qt.AlignLeft)
+        line.addWidget(self.pulse1_input, alignment= Qt.AlignLeft)
         line.addWidget(instr2)
         line.addWidget(test, alignment= Qt.AlignLeft)
         line.addWidget(instr3)
         line.addWidget(test2, alignment= Qt.AlignLeft)
-        line.addWidget(final_input1, alignment= Qt.AlignLeft)
-        line.addWidget(final_input2, alignment= Qt.AlignLeft)
+        line.addWidget(self.final_input1, alignment= Qt.AlignLeft)
+        line.addWidget(self.final_input2, alignment= Qt.AlignLeft)
         line.addWidget(results, alignment= Qt.AlignCenter)
         line2.addLayout(line)
         line2.addWidget(self.timer_label, alignment= Qt.AlignRight) 

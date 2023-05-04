@@ -8,10 +8,5 @@ app = QApplication([])
 first = FirstWin()
 first.show()
 
-second = SecondWin()
-second.hide()
-
-final = FinalWin()
-final.hide()
 
 app.exec()
