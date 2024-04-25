@@ -2,10 +2,11 @@
 win_x, win_y = 200, 100
 win_width, win_height = 1000, 500
 
-txt_hello = 'Добро пожаловать в тест руфье - определение здоровья'
+txt_hello = 'Добро пожаловать в тест Руфье - определение здоровья'
 txt_next = 'Начать'
 txt_instruction = 'Инструкция к тесту...' 
 txt_title = 'Тест Руфье'
+
 txt_name = 'Ваше ФИО:'
 txt_hintname = ""
 txt_hintage = "Возраст:"
