@@ -14,13 +14,40 @@ class FinalWin(QWidget):
 
     def calc_health(self, age, index):
         if age > 15:
-            if index > 15: return 'низкое'
-            elif index > 6: return 'среднее'
-            else: return 'высокое'
-        else:
-            if index > 18: return 'низкое'
-            elif index > 9: return 'среднее'
-            else: return 'высокое'
+            if index > 15: return 'низкий'
+            elif 11 < index <= 15: return 'удовлетворительный'
+            elif 6 < index <= 11: return 'средний'
+            elif 0.5 < index <= 6: return 'выше среднего'
+            else: return 'высокий'
+
+        if 13 <= age <= 14:
+            if index > 16.5: return 'низкий'
+            elif 12.5 < index <= 16.5: return 'удовлетворительный'
+            elif 7.5 < index <= 12.5: return 'средний'
+            elif 2 < index <= 7.5: return 'выше среднего'
+            else: return 'высокий'
+
+        if 11 <= age <= 12:
+            if index > 18: return 'низкий'
+            elif 14 < index <= 18: return 'удовлетворительный'
+            elif 9 < index <= 14: return 'средний'
+            elif 3.5 < index <= 9: return 'выше среднего'
+            else: return 'высокий'
+
+        if 9 <= age <= 10:
+            if index > 19.5: return 'низкий'
+            elif 15.5 < index <= 19.5: return 'удовлетворительный'
+            elif 10.5 < index <= 15.5: return 'средний'
+            elif 5 < index <= 10.5: return 'выше среднего'
+            else: return 'высокий'
+        
+        if 7 <= age <= 8:
+            if index > 21: return 'низкий'
+            elif 17 < index <= 21: return 'удовлетворительный'
+            elif 12 < index <= 17: return 'средний'
+            elif 6.5 < index <= 12: return 'выше среднего'
+            else: return 'высокий'
+        
 
     def calc_index(self, p1,p2,p3):
         return ((p1+p2+p3)*4 - 200)/10
