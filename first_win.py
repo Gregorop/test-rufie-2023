@@ -13,7 +13,7 @@ class FirstWin(QWidget):
         self.set_ui()
 
     def set_appear(self):
-        self.setStyleSheet('font-size:38px; background:lightgreen')
+        self.setStyleSheet('font-size:34px; background:lightgreen')
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
 
